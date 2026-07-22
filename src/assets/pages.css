@@ -1,0 +1,111 @@
+.hero-title { 
+    margin-bottom: 30px;
+}
+.hero-buttons-container {
+    display: flex;
+    gap: 30px;
+    margin-top: 25px;
+}
+
+.home-cards-container {
+    padding-inline: 30px;
+    border-radius: 4px;
+    background-color: var(--primary-light);
+}
+.home-cards-wrapper {
+    display: flex;
+    justify-content: space-between;
+    gap: 30px;
+}
+@media (max-width: 1127px) {
+    .home-cards-wrapper {
+        flex-direction: column;
+        align-items: center;
+    }
+}
+.home-card {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    min-width: 250px;
+    max-width: 400px;
+    width: 100%;  
+    padding: 20px 30px;
+    background-color: #fff;
+    text-align: center;
+    border-radius: 4px;
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.05);
+}
+.home-card.middle {
+    background-color: var(--primary-teal);    
+}
+.home-card.middle > * {
+    color: #fff;
+}
+.home-card-title {
+    color: var(--primary-teal);
+    margin-bottom: 5px !important;
+}
+.home-card-text {
+    margin-bottom: 30px;
+}
+.home-card-btn {
+    background-color: var(--primary-gray) !important;
+    margin-top: auto;
+}
+.home-card-btn:hover {
+    background-color: #fff !important;
+    margin-top: auto;
+}
+.home-card-btn.middle {
+    background-color: #fff !important;
+}
+.home-card-btn.middle:hover {
+    background-color:  var(--primary-gray) !important;
+}
+
+
+
+.home-services-container {
+    display: flex;
+    gap: 20px;
+}
+@media (max-width: 580px) {
+    .home-services-container {
+        flex-direction: column;
+       
+    }
+}
+.home-services-container > *{
+    flex: 1;
+    max-width: 400px;
+}
+.home-services-link-wrap {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+/***** FAQ PAGE *******/
+.faq-container {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+/********/
+
+/***** LOGIN PAGE *******/
+.login-forgot-password-wrap {
+    text-align: end;
+
+    a {
+        font-size: 14px;
+        text-decoration: none;
+        color: var(--primary-offline);
+    }
+}
+/********/
+
+.profile-title {
+    margin-bottom: 30px !important;
+}

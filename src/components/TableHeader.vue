@@ -1,0 +1,12 @@
+<template>
+    <thead>
+        <tr>
+            <th></th>
+            <th>ID</th>
+            <th>Ημερομηνία</th>
+            <th>Κατάσταση</th>
+            <th>Ενέργειες</th>
+            <th></th>
+        </tr>
+    </thead>
+</template>

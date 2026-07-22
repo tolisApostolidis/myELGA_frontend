@@ -1,0 +1,30 @@
+.header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: var(--header-height);
+    background: var(--primary-teal);
+    z-index: 1000;
+}
+
+.header-container {
+    width: 100%;
+    max-width: var(--page-width);
+    padding-inline: 30px;
+    margin: 0 auto;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    gap: 16px;
+}
+
+.header-brand img {
+    height: 80px;
+    display: block;
+}
+
+.header-buttons-container {
+    display: flex;
+    margin-left: auto;
+}

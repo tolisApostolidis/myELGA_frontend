@@ -1,0 +1,12 @@
+# Dependencies
+node_modules/
+
+# IDEs
+.vscode/
+
+# VS Code extensions
+.VSCodeCounter/
+
+# Vite
+.vite/
+dist/
