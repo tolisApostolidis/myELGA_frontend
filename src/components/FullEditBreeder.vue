@@ -70,7 +70,7 @@ const stateSelectionChange = (value) => {
 const applicationId = ref(null);
 const auth = ref(true);
 const url = computed(() => {
-    return 'http://localhost:8080/services/manager/' + applicationId.value + '/breeder';
+    return '/services/manager/' + applicationId.value + '/breeder';
 });
 const method = ref("POST");
 const { loading, error, performRequest } = remoteDataAccess(url, auth, method, formData);

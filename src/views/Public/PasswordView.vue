@@ -43,7 +43,7 @@ const onFormSubmit = async() => {
     emailNotExists.value = false;
     error.value = false;
 
-    const url = 'http://localhost:8080/api/auth/' + formData.value.email;
+    const url = '/api/auth/' + formData.value.email;
     // Then fetch
     fetch(url, {
         method: 'GET',
@@ -58,7 +58,7 @@ const onFormSubmit = async() => {
                     formData.value.phoneNumber = phoneNumber.value.phoneNumber;
                     console.log(formData.value)
                     //// fetch gia na steilei sms kai an ola kala kane redirect gia post to password ////
-                    fetch('http://localhost:8080/api/auth/sendOtp', {
+                    fetch('/api/auth/sendOtp', {
                         method: 'POST',
                         headers: {
                             'Content-Type': 'application/json'

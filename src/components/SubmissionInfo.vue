@@ -11,7 +11,7 @@ const route = useRoute();
 const submissionId = ref(null);
 
 const url = computed(()=>{
-    return 'http://localhost:8080/services/farmer/' + submissionId.value;
+    return '/services/farmer/' + submissionId.value;
 });
 const auth = ref(true);
 const { data, loading, performRequest } = remoteDataAccess(url, auth);

@@ -62,7 +62,7 @@ const openModal = (value) => {
     openModalState.value = true;
 }
 const onModalDelete = async() => {
-    const url = ref('http://localhost:8080/api/auth/' + userIdForDelete.value);
+    const url = ref('/api/auth/' + userIdForDelete.value);
     const auth = ref(true);
     const deleteMethod = ref('DELETE');
     const { error, performRequest } = remoteDataAccess(url, auth, deleteMethod);
@@ -75,7 +75,7 @@ const onModalDelete = async() => {
 }
 
 const auth = ref(true);
-const url = ref('http://localhost:8080/api/auth');
+const url = ref('/api/auth');
 const { error, loading, data, performRequest } = remoteDataAccess(url, auth);
 
 onMounted(() => {

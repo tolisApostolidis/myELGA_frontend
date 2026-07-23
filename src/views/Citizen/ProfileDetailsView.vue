@@ -9,7 +9,7 @@ const applicationStore = useApplicationStore();
 
 const id = ref(null);
 
-const url = ref('http://localhost:8080/services/profile/' + applicationStore.userData.email);
+const url = ref('/services/profile/' + applicationStore.userData.email);
 const auth = ref(true);
 const { data, loading, performRequest } = remoteDataAccess(url, auth);
 

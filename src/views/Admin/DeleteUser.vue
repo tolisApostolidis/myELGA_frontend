@@ -25,7 +25,7 @@ const v$ = useVuelidate(rules, formData);
 const method = ref('DELETE');
 const auth = ref(true);
 const url = computed(() => {
-    return 'http://localhost:8080/api/auth/' + formData.value.email;
+    return '/api/auth/' + formData.value.email;
 });
 const { loading, error, performRequest } = remoteDataAccess(url, auth, method);
 

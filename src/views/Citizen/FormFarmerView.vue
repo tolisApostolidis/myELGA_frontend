@@ -41,7 +41,7 @@ const v$ = useVuelidate(rules, formData);
 
 
 const auth = ref(true);
-const url = ref('http://localhost:8080/services/farmer/new/' + applicationStorage.userData.id);    
+const url = ref('/services/farmer/new/' + applicationStorage.userData.id);    
    
 const method = ref("POST");
 const { loading, error, performRequest } = remoteDataAccess(url, auth, method, formData);

@@ -12,7 +12,7 @@ const route = useRoute();
 const applicationId = ref(null);
 
 const url = computed(()=>{
-    return 'http://localhost:8080/services/breeder/' + applicationId.value;
+    return '/services/breeder/' + applicationId.value;
 });
 const auth = ref(true);
 const { data, loading, performRequest } = remoteDataAccess(url, auth);

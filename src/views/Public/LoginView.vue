@@ -45,7 +45,7 @@ const onFormSubmit = async() => {
     loading.value = true;
     authenticationFailed.value = false;
 
-    fetch('http://localhost:8080/api/auth/signin', {
+    fetch('/api/auth/signin', {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json'
@@ -111,7 +111,7 @@ onBeforeMount(() => {
                                 </div>
                             </div>
                             
-                            <form class="my-form" @submit.prevent="onLogin">
+                            <form class="my-form" @submit.prevent="onFormSubmit">
                                 <div class="my-form-group">
                                     <input 
                                         v-model="credentials.username"

@@ -79,7 +79,7 @@ const openModal = (value) => {
 const onModalDelete = async() => {
     console.log("came on delete");
 
-    const url = ref('http://localhost:8080/services/breeder/' + applicationIdForDelete.value);
+    const url = ref('/services/breeder/' + applicationIdForDelete.value);
     const auth = ref(true);
     const deleteMethod = ref('DELETE');
     const { error, performRequest } = remoteDataAccess(url, auth, deleteMethod);
@@ -112,9 +112,9 @@ onMounted(() => {
         // Get farmer id from url
         farmerId.value = route.params.id;   
 
-        url.value = 'http://localhost:8080/services/profile/' + farmerId.value + '/my-breeders';
+        url.value = '/services/profile/' + farmerId.value + '/my-breeders';
     }else if(props.userRole == 'ROLE_MANAGER') {
-        url.value = 'http://localhost:8080/services/manager/breeders';
+        url.value = '/services/manager/breeders';
     }
     performRequest();
 });

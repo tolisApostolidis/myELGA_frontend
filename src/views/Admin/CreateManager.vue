@@ -100,7 +100,7 @@ const onFormSubmit = async() => {
 
     loading.value = true;
 
-    fetch('http://localhost:8080/services/manager/new', {
+    fetch('/services/manager/new', {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json',

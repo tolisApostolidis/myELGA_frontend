@@ -35,7 +35,7 @@ const v$ = useVuelidate(rules, formData);
 
 const id = ref(null);
 const url = computed(() => {
-    return 'http://localhost:8080/services/profile/' + id.value;
+    return '/services/profile/' + id.value;
 });
 const method = ref("POST");
 const auth = ref(true);

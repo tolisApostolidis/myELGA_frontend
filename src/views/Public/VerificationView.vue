@@ -44,7 +44,7 @@ const onFormSubmit = async() => {
     }
     console.log(validateOtpData)
 
-     fetch('http://localhost:8080/api/auth/validateOtp', {
+     fetch('/api/auth/validateOtp', {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json'

@@ -99,7 +99,7 @@ const onFormSubmit = async () => {
 
     loading.value = true;
 
-    fetch('http://localhost:8080/api/auth/signup', {
+    fetch('/api/auth/signup', {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json'

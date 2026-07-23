@@ -5,7 +5,7 @@ import { useApplicationStore } from '@/stores/application.js';
 
 const applicationStore = useApplicationStore();
 
-const url = ref('http://localhost:8080/services/manager/' + applicationStore.userData.id);
+const url = ref('/services/manager/' + applicationStore.userData.id);
 const auth = ref(true);
 const { data, loading, performRequest } = remoteDataAccess(url, auth);
 

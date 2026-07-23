@@ -45,7 +45,7 @@ const v$ = useVuelidate(rules, formData);
 const id = ref(null);
 const breederId = ref(null);
 const url = computed(() => {
-    return 'http://localhost:8080/services/breeder/' + breederId.value;
+    return '/services/breeder/' + breederId.value;
 });
 const auth = ref(true);
 const method = ref("POST");

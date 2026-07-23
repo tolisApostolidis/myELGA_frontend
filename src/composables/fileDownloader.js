@@ -8,9 +8,9 @@ export function fileDownloader(type = ref(null), id = ref(null)) {
 
     const url = ref(null);
     if (type.value == 'submission') {
-        url.value = 'http://localhost:8080/services/farmer/' + id.value + '/download';
+        url.value = '/services/farmer/' + id.value + '/download';
     }else {
-        url.value = 'http://localhost:8080/services/breeder/' + id.value + '/download';
+        url.value = '/services/breeder/' + id.value + '/download';
     }
 
     const headers = {

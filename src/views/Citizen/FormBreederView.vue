@@ -46,7 +46,7 @@ const rules = computed(() => {
 const v$ = useVuelidate(rules, formData);
 
 const auth = ref(true);
-const url = ref('http://localhost:8080/services/breeder/new/' + applicationStorage.userData.id);    
+const url = ref('/services/breeder/new/' + applicationStorage.userData.id);    
 const method = ref("POST");
 
 const { loading, error, performRequest } = remoteDataAccess(url, auth, method, formData);

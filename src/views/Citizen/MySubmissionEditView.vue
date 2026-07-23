@@ -42,7 +42,7 @@ const v$ = useVuelidate(rules, formData);
 
 const submissionId = ref(null);
 const url = computed(() => {
-    return 'http://localhost:8080/services/farmer/' + submissionId.value;
+    return '/services/farmer/' + submissionId.value;
 });
 const auth = ref(true);
 const method = ref("POST");
