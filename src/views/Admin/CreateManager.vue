@@ -2,7 +2,7 @@
 import { computed, ref, reactive } from 'vue';
 import { useRouter } from 'vue-router';
 import useVuelidate from '@vuelidate/core';
-import { required, email, sameAs, minLength, alpha, helpers } from '@vuelidate/validators';
+import { required, email, sameAs, minLength, decimal, alpha, helpers } from '@vuelidate/validators';
 import { BOverlay } from 'bootstrap-vue-next';
 import protectDanger from '@/assets/images/password/danger.png';
 import protectMedium from '@/assets/images/password/medium.png';
@@ -55,6 +55,7 @@ const rules = computed(() => {
         },
         afm: {
             required: helpers.withMessage("Το πεδίο είναι υποχρεωτικό", required),
+            decimal: helpers.withMessage("Επιτρέπονται μόνο αριθμοί", decimal),
             minLength: helpers.withMessage("Ο αριθμός δεν είναι ρεαλιστικός", minLength(9))
         }, 
         jobAddress: {
@@ -100,13 +101,23 @@ const onFormSubmit = async() => {
 
     loading.value = true;
 
+    const payload = {
+        username: formData.username,
+        email: formData.email,
+        password: formData.password,
+        firstName: formData.firstName,
+        lastName: formData.lastName,
+        afm: Number(formData.afm),
+        jobAddress: formData.jobAddress
+    };
+
     fetch('/services/manager/new', {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json',
             'Authorization': 'Bearer ' + applicationStorage.userData.accessToken
         },
-        body: JSON.stringify(formData)
+        body: JSON.stringify(payload)
     })
     .then((response) => {
         return response.json()
@@ -118,6 +129,8 @@ const onFormSubmit = async() => {
             router.push({ name: 'admin-board'});
             return
         }
+        console.error(`Create manager failed: ${response.status}`);
+        console.error('Backend response:', data);
     })
     .catch((err) => {
         // network/server down
