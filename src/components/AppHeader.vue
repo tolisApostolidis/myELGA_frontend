@@ -1,5 +1,5 @@
 <script setup>
-import logo from '@/assets/images/myElgaBanner.png';
+import logo from '@/assets/images/myelga_logo.svg';
 import { ref } from 'vue';
 import { useRouter, RouterLink } from 'vue-router';
 import { useApplicationStore } from '@/stores/application.js';
