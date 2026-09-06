@@ -51,6 +51,16 @@ pipeline {
                 '''
             }
         }
+
+        stage('Restart Kubernetes Deployment') {
+            steps {
+                build job: 'myELGA-deployment',
+                    parameters: [
+                        string(name: 'COMPONENT', value: 'frontend')
+                    ],
+                    wait: true
+            }
+        }
     }
 
     post {
