@@ -42,8 +42,13 @@ const sortByOptionGreek = computed(() => {
 const onSortBy = computed(() => {
     const arr = (data.value ?? []).slice();
 
-    const dateDesc = (a, b) => new Date(b.creationDate) - new Date(a.creationDate);
-    const dateAsc  = (a, b) => new Date(a.creationDate) - new Date(b.creationDate);
+    const parseDate = (date) => {
+        const [day, month, year] = date.split("-");
+        return new Date(year, month - 1, day);
+    };
+
+    const dateDesc = (a, b) => parseDate(b.creationDate) - parseDate(a.creationDate);
+    const dateAsc = (a, b) => parseDate(a.creationDate) - parseDate(b.creationDate);
 
     const orderByState = (order) => (a, b) => {
         const aRank = order.indexOf(a.state);
